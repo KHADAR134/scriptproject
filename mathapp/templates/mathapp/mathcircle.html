@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Area Of Circle</title>
+    <link rel="stylesheet" href="{% static 'css/mathscript.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="formview">
+            <div class="banner">
+                AREA OF CIRCLE
+            </div>
+            <div class="content">
+                <form action="/mathcircle/" method="POST">
+                    {% csrf_token %}
+                    <div class="forminput">
+                        <label for="value_radius">RADIUS=</label>
+                        <input type="text" name="value_radius" id="value_radius">
+                    </div>
+                    <div class="forminput">
+                        <button type="button" name="button_calculate" id="button_calculate">Calculate</button>
+                    </div>
+                     <div  class="forminput">
+                        <label for="value_area">AREA=</label>
+                        <input type="text" name="value_area" id="value_area" readonly>
+                    </div>                    
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/mathscript.js"></script>
+</body>
+</html>
